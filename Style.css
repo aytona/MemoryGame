@@ -1,0 +1,145 @@
+@font-face
+{
+	font-family: Belwe Bd BT;
+	font-style: bold;
+	src: url("Fonts/Belwe_Bd_BT.ttf");
+}
+
+@font-face
+{
+	font-family: D Day Stencil;
+	font-style: bold;
+	src: url("Fonts/D_Day_Stencil.ttf");
+}
+
+body
+{
+	background-color: #202020;
+	text-align: center;
+}
+
+button
+{
+	margin: 5px;
+	padding: 15px;
+	border-width: 5px;
+	border-style: dotted solid double;
+	border-radius: 10px;
+	font-family: Belwe Bd BT;
+	cursor: pointer;
+}
+
+button:hover
+{
+	border-style: solid;
+	border-color: Black;
+}
+
+button.bot1
+{
+	position: relative;
+	top: 320px;
+}
+
+button.bot2
+{
+	position: relative;
+	bottom: -330px;
+}
+
+button.bot3
+{
+	position: relative;
+	bottom: -450px;
+}
+
+button.bot4
+{
+	padding: 5px;
+	border-radius: 3px;
+	position: relative;
+	top: -20px;
+}
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+#Title
+{
+	width: 1000px;
+	height: 560px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #404040;
+	background: url('Images/MainMenu.png');
+}
+
+#Play
+{
+	width: 1000px;
+	height: 560px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #404040;
+	background: url('Images/GameScreen.jpg');
+}
+
+#Instructions
+{
+	width: 1000px;
+	height: 563px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #404040;
+	background: url('Images/Instructions.png');
+}
+
+.card
+{
+	width: 100px;
+	height: 100px;
+	margin: 2px;
+	display: inline-table;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+}
+
+.card:hover
+{
+	cursor: pointer;
+	border-color: black;
+}
+
+.score
+{
+	font-family: D Day Stencil;
+	font-size: 28px;
+	color: white;
+	position: relative;
+	right: 420px;
+	bottom: -50px;
+}
+
+.time
+{
+	font-family: D Day Stencil;
+	font-size: 25px;
+	color: white;
+	font-size: 30px;
+	position: relative;
+	left: 420px;
+	bottom: -15px;
+}

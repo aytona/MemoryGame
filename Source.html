@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<Title>Warframe Matching Game</title>
+	<link rel = "stylesheet" type = "text/css" href = "Style.css">
+	<link rel = "icon" type = "image/icon" href = "Images/favicon.ico">
+</head>
+<body>
+	<!-- Stage of the game -->
+	<div id = "Stage">
+		<!-- Main Menu -->
+		<div id = "Title">
+		<!-- Start playing the game -->
+		<button onclick = "onPlay()" class = "bot1">PLAY GAME</button>
+		<br>
+		<!-- Instructions how to play -->
+		<a href = "Instructions.html"><button class = "bot2">Instructions</button></a>
+		</div>
+		<!-- Game Screen -->
+		<div id = "Play">
+			<!-- 6 x 4 Board Dimension -->
+			<!-- First Row -->
+			<div class = "card" id = "card1"><img src = "Images/Ash.jpg"></div>
+			<div class = "card" id = "card2"><img src = "Images/Ash.jpg"></div>
+			<div class = "card" id = "card3"><img src = "Images/Banshee.jpg"></div>
+			<div class = "card" id = "card4"><img src = "Images/Banshee.jpg"></div>
+			<div class = "card" id = "card5"><img src = "Images/Ember.jpg"></div>
+			<div class = "card" id = "card6"><img src = "Images/Ember.jpg"></div>
+			<!-- Second Row -->
+			<br>
+			<div class = "card" id = "card7"><img src = "Images/Excalibur.jpg"></div>
+			<div class = "card" id = "card8"><img src = "Images/Excalibur.jpg"></div>
+			<div class = "card" id = "card9"><img src = "Images/Frost.jpg"></div>
+			<div class = "card" id = "card10"><img src = "Images/Frost.jpg"></div>
+			<div class = "card" id = "card11"><img src = "Images/Loki.jpg"></div>
+			<div class = "card" id = "card12"><img src = "Images/Loki.jpg"></div>
+			<!-- Third Row -->
+			<br>
+			<div class = "card" id = "card13"><img src = "Images/Mag.jpg"></div>
+			<div class = "card" id = "card14"><img src = "Images/Mag.jpg"></div>
+			<div class = "card" id = "card15"><img src = "Images/Nekros.jpg"></div>
+			<div class = "card" id = "card16"><img src = "Images/Nekros.jpg"></div>
+			<div class = "card" id = "card17"><img src = "Images/Nova.jpg"></div>
+			<div class = "card" id = "card18"><img src = "Images/Nova.jpg"></div>
+			<!-- Fourth Row -->
+			<br>
+			<div class = "card" id = "card19"><img src = "Images/Nyx.jpg"></div>
+			<div class = "card" id = "card20"><img src = "Images/Nyx.jpg"></div>
+			<div class = "card" id = "card21"><img src = "Images/Trinity.jpg"></div>
+			<div class = "card" id = "card22"><img src = "Images/Trinity.jpg"></div>
+			<div class = "card" id = "card23"><img src = "Images/Valkyr.jpg"></div>
+			<div class = "card" id = "card24"><img src = "Images/Valkyr.jpg"></div>
+			<br>
+			<!-- Stats -->
+			<div class = "score">0000</div>
+			<div class = "time">00:00</div>
+			<!-- Button to take you back to the Menu -->
+			<button onclick = "onMenu()" class = "bot4">Back to Main Menu</button>
+		</div>
+	</div>
+</body>
+<script src = "Script.js"></script>
+<html>
