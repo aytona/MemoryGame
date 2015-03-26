@@ -114,6 +114,7 @@ a
 	border-style: solid;
 	border-width: 1px;
 	border-color: white;
+	background-image: url('Images/Lotus_BG.jpg');
 }
 
 .card:hover
