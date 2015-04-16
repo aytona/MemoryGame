@@ -6,59 +6,15 @@
 	<link rel = "stylesheet" type = "text/css" href = "StyleGame.css">
 	<link rel = "icon" type = "image/icon" href = "Images/favicon.ico">
 	<script>
+	var deck_array = ['Images/Ash.jpg', 'Images/Ash.jpg', 'Images/Banshee.jpg', 'Images/Banshee.jpg',
+	'Images/Ember.jpg', 'Images/Ember.jpg', 'Images/Excalibur.jpg', 'Images/Excalibur.jpg',
+	'Images/Frost.jpg', 'Images/Frost.jpg', 'Images/Loki.jpg', 'Images/Loki.jpg',
+	'Images/Mag.jpg', 'Images/Mag.jpg', 'Images/Nekros.jpg', 'Images/Nekros.jpg',
+	'Images/Nova.jpg', 'Images/Nova.jpg', 'Images/Nyx.jpg', 'Images/Nyx.jpg',
+	'Images/Trinity.jpg', 'Images/Trinity.jpg', 'Images/Valkyr.jpg', 'Images/Valkyr.jpg'];
 	var card_value = [];
 	var card_ids = [];
-	var flipped = 0;
-	var deck = new Array();
-	
-	deck[0] = new Image();
-	deck[0].src = 'Images/Ash.jpg';
-	deck[1] = new Image();
-	deck[1].src = 'Images/Ash.jpg';
-	deck[2] = new Image();
-	deck[2].src = 'Images/Banshee.jpg';
-	deck[3] = new Image();
-	deck[3].src = 'Images/Banshee.jpg';
-	deck[4] = new Image();
-	deck[4].src = 'Images/Ember.jpg';
-	deck[5] = new Image();
-	deck[5].src = 'Images/Ember.jpg';
-	deck[6] = new Image();
-	deck[6].src = 'Images/Excalibur.jpg';
-	deck[7] = new Image();
-	deck[7].src = 'Images/Excalibur.jpg';
-	deck[8] = new Image();
-	deck[8].src = 'Images/Frost.jpg';
-	deck[9] = new Image();
-	deck[9].src = 'Images/Frost.jpg';
-	deck[10] = new Image();
-	deck[10].src = 'Images/Loki.jpg';
-	deck[11] = new Image();
-	deck[11].src = 'Images/Loki.jpg';
-	deck[12] = new Image();
-	deck[12].src = 'Images/Mag.jpg';
-	deck[13] = new Image();
-	deck[13].src = 'Images/Mag.jpg';
-	deck[14] = new Image();
-	deck[14].src = 'Images/Nekros.jpg';
-	deck[15] = new Image();
-	deck[15].src = 'Images/Nekros.jpg';
-	deck[16] = new Image();
-	deck[16].src = 'Images/Nova.jpg';
-	deck[17] = new Image();
-	deck[17].src = 'Images/Nova.jpg';
-	deck[18] = new Image();
-	deck[18].src = 'Images/Nyx.jpg';
-	deck[19] = new Image();
-	deck[19].src = 'Images/Nyx.jpg';
-	deck[20] = new Image();
-	deck[20].src = 'Images/Trinity.jpg';
-	deck[21] = new Image();
-	deck[21].src = 'Images/Trinity.jpg';
-	deck[22] = new Image();
-	deck[22].src = 'Images/Valkyr.jpg';
-	deck[23] = new Image();
-	deck[23].src = 'Images/Valkyr.jpg';
+	var card_flipped = 0;
 	
 	Array.prototype.shuffleDeck = function()
 	{
@@ -74,36 +30,36 @@
 	
 	function newGame()
 	{
-		flipped = 0;
+		card_flipped = 0;
 		var output = '';
-		deck.shuffleDeck();
-		for (var i = 0; i < deck.length; i++)
+		deck_array.shuffleDeck();
+		for (var i = 0; i < deck_array.length; i++)
 		{
-			output += '<div id="card_'+i+'" onclick="memoryFlipTile(this,\''+deck[i]+'\')"></div>';
+			output += '<div id="card_'+i+'" onclick="flipCard(this,\''+deck_array[i]+'\')"></div>';
 		}
 		document.getElementById('gameBoard').innerHTML = output;
 	}
 	
-	function flipCard(tile,val)
+	function flipCard(card,val)
 	{
-		if(tile.innerHTML == "" && card_value.length < 2)
+		if(card.innerHTML == "" && card_value.length < 2)
 		{
-			tile.innerHTML = <img src = "\'+val+\'" />;
+			card.stile.background = 'url('+val+'.jpg)';
 			if(card_value.length == 0)
 			{
 				card_value.push(val);
-				card_ids.push(tile.id);
+				card_ids.push(card.id);
 			}
 			else if (card_value.length == 1)
 			{
 				card_value.push(val);
-				card_ids.push(tile.id);
+				card_ids.push(card.id);
 				if (card_value[0] == card_value[1])
 				{
-					flipped += 2;
+					card_flipped += 2;
 					card_value = [];
 					card_ids = [];
-					if (flipped == deck.length)
+					if (card_flipped == deck_array.length)
 					{
 						alert("Board cleared... generating new board");
 						document.getElementById('gameBoard').innerHTML = "";
@@ -115,14 +71,14 @@
 						{
 							var card_1 = document.getElementById(card_ids[0]);
 							var card_2 = document.getElementById(card_ids[1]);
-							card_1.style.background = 'url(Images/Lotus_BG.jpg) no-repeat;
+							card_1.style.background = 'url(Images/Lotus_BG.jpg) no-repeat';
 							card_1.innerHTML = "";
-							card_2.style.background = 'url(Images/Lotus_BG.jpg) no-repeat;
+							card_2.style.background = 'url(Images/Lotus_BG.jpg) no-repeat';
 							card_1.innerHTML = "";
 							card_value = [];
 							card_ids = [];
 						}
-						setTimeout(flipBack, 3000);
+						setTimeout(flipBack, 1000);
 					}
 				}
 			}
@@ -133,8 +89,9 @@
 <body>
 	<div id = "gameBoard"></div>
 	<script>newGame();</script>
+	<a href = "Source.html"><button>Main Menu</button></a>
 </body>
-<audio hidsden = "true" autoplay = "true" loop = "true">
+<audio hidden = "true" autoplay = "true" loop = "true">
 	<source src = "Audio/Warframe_Stalker.mp3" type = "audio/mp3">
 </audio>
 </html>

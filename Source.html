@@ -12,25 +12,15 @@
 		<!-- Main Menu -->
 		<div id = "Title">
 		<!-- Start playing the game -->
-		<button onclick = "onPlay()" class = "bot1">PLAY GAME</button>
+		<a href = "Game.html"><button class = "bot1">PLAY GAME</button></a>
 		<br>
 		<!-- Instructions how to play -->
 		<a href = "Instructions.html"><button class = "bot2">Instructions</button></a>
 		</div>
-		<!-- Game Screen -->
-		<div id = "Play">
-			
-			<br>
-			<!-- Stats -->
-			<div class = "score">0000</div>
-			<div class = "time">00:00</div>
-			<!-- Button to take you back to the Menu -->
-			<button onclick = "onMenu()" class = "bot4">Back to Main Menu</button>
-		</div>
 	</div>
 </body>
 <!-- Audio for Main Menu -->
-<audio id = "MenuAudio" hidden = "true" loop = "true">
+<audio hidden = "true" autoplay = "true" loop = "true">
 	<source src = "Audio/Warframe_Drums.mp3" type = "audio/mp3">
 </audio>
 <script src = "Script.js"></script>

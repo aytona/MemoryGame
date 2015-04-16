@@ -53,14 +53,6 @@ button.bot3
 	bottom: -450px;
 }
 
-button.bot4
-{
-	padding: 5px;
-	border-radius: 3px;
-	position: relative;
-	top: -20px;
-}
-
 a
 {
 	text-decoration: none;

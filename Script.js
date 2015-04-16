@@ -3,12 +3,6 @@ var menu = document.getElementById("Title");
 var play = document.getElementById("Play");
 var menuMusic = document.getElementById("MenuAudio");
 var gameMusic = document.getElementById("GameAudio");
-var deck = new Array();
-var cardID = [];
-var cardsFlipped = 0;
-
-
-
 
 // Default board (GLOBAL)
 play.style.display = "none";
@@ -16,30 +10,12 @@ menuMusic.play();
 gameMusic.pause();
 shuffleDeck();
 printDeck();
-window.addEventListener(
-
-// Whenever the Play Button is pressed
-function onPlay()
-{
-	menu.style.display = "none";
-	play.style.display = "block";
-	menuMusic.pause();
-	gameMusic.play();
-	shuffleDeck();
-	printDeck();
-	showTime();
-	cardsFlipped = 0;
-}
 
 // Whenever the Menu Button is pressed
 function onMenu()
 {
 	play.style.display = "none";
 	menu.style.display = "block";
-	menuMusic.play();
-	gameMusic.pause();
-	shuffleDeck();
-	printDeck();
 }
 
 // Shuffles the deck whenever this function is called

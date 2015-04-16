@@ -18,6 +18,25 @@ body
 	text-align: center;
 }
 
+button
+{
+	margin: 5px;
+	padding: 15px;
+	border-width: 5px;
+	border-style: dotted solid double;
+	border-radius: 10px;
+	font-family: Belwe Bd BT;
+	cursor: pointer;
+	position: relative;
+	top: -80px;
+}
+
+button:hover
+{
+	border-style: solid;
+	border-color: Black;
+}
+
 #gameBoard
 {
 	width: 1000px;
@@ -31,7 +50,7 @@ body
 	background: url('Images/GameScreen.jpg');
 }
 
-#gameBoard > div
+#gameBoard>div
 {
 	background: url('Images/Lotus_BG.jpg') no-repeat;
 	width: 100px;
