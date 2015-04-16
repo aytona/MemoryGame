@@ -31,6 +31,7 @@
 	
 	function newGame()
 	{
+		score = 0;
 		card_flipped = 0;
 		var output = '';
 		deck_array.shuffleDeck();
@@ -61,6 +62,7 @@
 					card_flipped += 2;
 					card_value = [];
 					card_ids = [];
+					showScore();
 					if (card_flipped == deck_array.length)
 					{
 						window.open("WinGame.html",'_self', false);
@@ -120,7 +122,6 @@
 	function showScore()
 	{
 		document.querySelector(".score").textContent = score;
-		console.log(score);
 	}
 	</script>
 </head>
