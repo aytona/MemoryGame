@@ -4,55 +4,10 @@ var play = document.getElementById("Play");
 var menuMusic = document.getElementById("MenuAudio");
 var gameMusic = document.getElementById("GameAudio");
 var deck = new Array();
+var cardID = [];
+var cardsFlipped = 0;
 
-deck[0] = new Image();
-deck[0].src = 'Images/Ash.jpg';
-deck[1] = new Image();
-deck[1].src = 'Images/Ash.jpg';
-deck[2] = new Image();
-deck[2].src = 'Images/Banshee.jpg';
-deck[3] = new Image();
-deck[3].src = 'Images/Banshee.jpg';
-deck[4] = new Image();
-deck[4].src = 'Images/Ember.jpg';
-deck[5] = new Image();
-deck[5].src = 'Images/Ember.jpg';
-deck[6] = new Image();
-deck[6].src = 'Images/Excalibur.jpg';
-deck[7] = new Image();
-deck[7].src = 'Images/Excalibur.jpg';
-deck[8] = new Image();
-deck[8].src = 'Images/Frost.jpg';
-deck[9] = new Image();
-deck[9].src = 'Images/Frost.jpg';
-deck[10] = new Image();
-deck[10].src = 'Images/Loki.jpg';
-deck[11] = new Image();
-deck[11].src = 'Images/Loki.jpg';
-deck[12] = new Image();
-deck[12].src = 'Images/Mag.jpg';
-deck[13] = new Image();
-deck[13].src = 'Images/Mag.jpg';
-deck[14] = new Image();
-deck[14].src = 'Images/Nekros.jpg';
-deck[15] = new Image();
-deck[15].src = 'Images/Nekros.jpg';
-deck[16] = new Image();
-deck[16].src = 'Images/Nova.jpg';
-deck[17] = new Image();
-deck[17].src = 'Images/Nova.jpg';
-deck[18] = new Image();
-deck[18].src = 'Images/Nyx.jpg';
-deck[19] = new Image();
-deck[19].src = 'Images/Nyx.jpg';
-deck[20] = new Image();
-deck[20].src = 'Images/Trinity.jpg';
-deck[21] = new Image();
-deck[21].src = 'Images/Trinity.jpg';
-deck[22] = new Image();
-deck[22].src = 'Images/Valkyr.jpg';
-deck[23] = new Image();
-deck[23].src = 'Images/Valkyr.jpg';
+
 
 
 // Default board (GLOBAL)
@@ -61,6 +16,7 @@ menuMusic.play();
 gameMusic.pause();
 shuffleDeck();
 printDeck();
+window.addEventListener(
 
 // Whenever the Play Button is pressed
 function onPlay()
@@ -72,6 +28,7 @@ function onPlay()
 	shuffleDeck();
 	printDeck();
 	showTime();
+	cardsFlipped = 0;
 }
 
 // Whenever the Menu Button is pressed

@@ -80,19 +80,6 @@ a
 	background: url('Images/MainMenu.png');
 }
 
-#Play
-{
-	width: 1000px;
-	height: 560px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	border-style: groove;
-	border-width: 4px;
-	border-color: #404040;
-	background: url('Images/GameScreen.jpg');
-}
-
 #Instructions
 {
 	width: 1000px;
@@ -104,42 +91,4 @@ a
 	border-width: 4px;
 	border-color: #404040;
 	background: url('Images/Instructions.png');
-}
-
-.card
-{
-	width: 100px;
-	height: 100px;
-	display: inline-table;
-	border-style: solid;
-	border-width: 1px;
-	border-color: white;
-	background-image: url('Images/Lotus_BG.jpg');
-}
-
-.card:hover
-{
-	cursor: pointer;
-	border-color: black;
-}
-
-.score
-{
-	font-family: D Day Stencil;
-	font-size: 28px;
-	color: white;
-	position: relative;
-	right: 420px;
-	bottom: -50px;
-}
-
-.time
-{
-	font-family: D Day Stencil;
-	font-size: 25px;
-	color: white;
-	font-size: 30px;
-	position: relative;
-	left: 420px;
-	bottom: -15px;
 }
