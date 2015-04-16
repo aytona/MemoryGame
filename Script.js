@@ -1,22 +1,11 @@
 var stage = document.getElementById("Stage");
 var menu = document.getElementById("Title");
-var play = document.getElementById("Play");
 var menuMusic = document.getElementById("MenuAudio");
 var gameMusic = document.getElementById("GameAudio");
 
 // Default board (GLOBAL)
-play.style.display = "none";
-menuMusic.play();
-gameMusic.pause();
 shuffleDeck();
 printDeck();
-
-// Whenever the Menu Button is pressed
-function onMenu()
-{
-	play.style.display = "none";
-	menu.style.display = "block";
-}
 
 // Shuffles the deck whenever this function is called
 function shuffleDeck()
@@ -44,36 +33,3 @@ function printDeck()
 		document.getElementById("card"+(i+1)).appendChild(deck[i]);
 	}
 }
-
-// Records current date in minutes and seconds
-// Then calculate the difference from the start of the recording to the current time
-function startTimer(duration, display) {
-    var start = Date.now(),
-        diff,
-        minutes,
-        seconds;
-    function timer() {
-        diff = duration - (((Date.now() - start) / 1000) | 0);
-
-        minutes = (diff / 60) | 0;
-        seconds = (diff % 60) | 0;
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds; 
-
-        if (diff <= 0) {
-            start = Date.now() + 1000;
-        }
-    };
-    timer();
-    setInterval(timer, 1000);
-}
-
-// Prints the countdown timer
-function showTime() {
-    var duration = 60 * 2;
-    var display = document.querySelector(".time");
-    startTimer(duration, display);
-};

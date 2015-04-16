@@ -15,6 +15,7 @@
 	var card_value = [];
 	var card_ids = [];
 	var card_flipped = 0;
+	var score = 0;
 	
 	Array.prototype.shuffleDeck = function()
 	{
@@ -44,7 +45,7 @@
 	{
 		if(card.innerHTML == "" && card_value.length < 2)
 		{
-			card.stile.background = 'url('+val+'.jpg)';
+			card.style.background = 'url('+val+')';
 			if(card_value.length == 0)
 			{
 				card_value.push(val);
@@ -56,39 +57,80 @@
 				card_ids.push(card.id);
 				if (card_value[0] == card_value[1])
 				{
+					score += 100;
 					card_flipped += 2;
 					card_value = [];
 					card_ids = [];
 					if (card_flipped == deck_array.length)
 					{
-						alert("Board cleared... generating new board");
-						document.getElementById('gameBoard').innerHTML = "";
-						newGame();
+						window.open("WinGame.html",'_self', false);
 					}
-					else
+				}
+				else {
+					function flipBack()
 					{
-						function flipBack()
-						{
-							var card_1 = document.getElementById(card_ids[0]);
-							var card_2 = document.getElementById(card_ids[1]);
-							card_1.style.background = 'url(Images/Lotus_BG.jpg) no-repeat';
-							card_1.innerHTML = "";
-							card_2.style.background = 'url(Images/Lotus_BG.jpg) no-repeat';
-							card_1.innerHTML = "";
-							card_value = [];
-							card_ids = [];
-						}
-						setTimeout(flipBack, 1000);
+						var card_1 = document.getElementById(card_ids[0]);
+						var card_2 = document.getElementById(card_ids[1]);
+						card_1.style.background = "url('Images/Lotus_BG.jpg') no-repeat";
+						card_1.innerHTML = "";
+						card_2.style.background = "url('Images/Lotus_BG.jpg') no-repeat";
+						card_1.innerHTML = "";
+						card_value = [];
+						card_ids = [];
 					}
+					setTimeout(flipBack, 500);
 				}
 			}
 		}
+	}
+	
+	function startTimer(duration, display)
+	{
+		var start = Date.now(),
+			diff,
+			minutes,
+			seconds;
+		function timer() 
+		{
+			diff = duration - (((Date.now() - start) / 1000) | 0);
+
+			minutes = (diff / 60) | 0;
+			seconds = (diff % 60) | 0;
+
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+			seconds = seconds < 10 ? "0" + seconds : seconds;
+
+			display.textContent = minutes + ":" + seconds; 
+
+			if (diff <= 0) {
+				window.open("GameOver.html",'_self', false);
+			}
+		};
+		timer();
+		setInterval(timer, 1000);
+	}
+	
+	function showTime() 
+	{
+		var duration = 60 * 2;
+		var display = document.querySelector(".time");
+		startTimer(duration, display);
+	}
+	
+	function showScore()
+	{
+		document.querySelector(".score").textContent = score;
+		console.log(score);
 	}
 	</script>
 </head>
 <body>
 	<div id = "gameBoard"></div>
 	<script>newGame();</script>
+	<div class = "score">0000</div>
+	<script>showScore()</script>
+	<div class = "time">00:00</div>
+	<script>showTime()</script>
 	<a href = "Source.html"><button>Main Menu</button></a>
 </body>
 <audio hidden = "true" autoplay = "true" loop = "true">
