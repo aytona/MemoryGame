@@ -2,14 +2,14 @@
 {
 	font-family: Belwe Bd BT;
 	font-style: bold;
-	src: url("Fonts/Belwe_Bd_BT.ttf");
+	src: url("../Fonts/Belwe_Bd_BT.ttf");
 }
 
 @font-face
 {
 	font-family: D Day Stencil;
 	font-style: bold;
-	src: url("Fonts/D_Day_Stencil.ttf");
+	src: url("../Fonts/D_Day_Stencil.ttf");
 }
 
 body
@@ -27,14 +27,96 @@ button
 	border-radius: 10px;
 	font-family: Belwe Bd BT;
 	cursor: pointer;
-	position: relative;
-	top: -200px;
 }
 
 button:hover
 {
 	border-style: solid;
 	border-color: Black;
+}
+
+button.mainPlay
+{
+	position: relative;
+	top: 320px;
+}
+
+button.mainInst
+{
+	position: relative;
+	bottom: -330px;
+}
+
+button.instMenu
+{
+	position: relative;
+	top: 420px;
+}
+
+button.playMenu
+{
+	position: relative;
+	bottom: 200px;
+}
+
+button.overMenu
+{
+	position: relative;
+	right: 100px;
+	bottom: 220px;
+}
+
+button.overPlay
+{
+	position: relative;
+	right: 250px;
+	bottom: 300px;
+}
+
+button.winMenu
+{
+	position: relative;
+	right: 37px;
+	bottom: 180px;
+}
+
+button.winPlay
+{
+	position: relative;
+	right: 180px;
+	bottom: 250px;
+}
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+#Title
+{
+	width: 1000px;
+	height: 560px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #404040;
+	background: url('../Images/MainMenu.png');
+}
+
+#Instructions
+{
+	width: 1000px;
+	height: 563px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #404040;
+	background: url('../Images/Instructions.png');
 }
 
 #gameBoard
@@ -47,12 +129,12 @@ button:hover
 	border-style: groove;
 	border-width: 4px;
 	border-color: #404040;
-	background: url('Images/GameScreen.jpg');
+	background: url('../Images/GameScreen.jpg');
 }
 
 #gameBoard>div
 {
-	background: url('Images/Lotus_BG.jpg') no-repeat;
+	background: url('../Images/Lotus_BG.jpg') no-repeat;
 	width: 100px;
 	height: 100px;
 	float: left;
@@ -73,7 +155,7 @@ button:hover
 	border-style: groove;
 	border-width: 4px;
 	border-color: #404040;
-	background: url('Images/GameOver.jpg');
+	background: url('../Images/GameOver.jpg');
 }
 
 #winGame
@@ -86,7 +168,7 @@ button:hover
 	border-style: groove;
 	border-width: 4px;
 	border-color: #404040;
-	background: url('Images/WinGame.jpg');
+	background: url('../Images/WinGame.jpg');
 }
 
 .score
